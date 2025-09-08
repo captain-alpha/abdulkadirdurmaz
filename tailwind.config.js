@@ -7,6 +7,10 @@ module.exports = {
         darkPurple: '#160016', // Renk kodunuzu buraya ekledik
         darkBlue: '#020618',
       },
+      fontFamily: {
+        almondita: ["Almondita", "cursive"],
+        consolas: ['Consolas', 'monospace'],
+      },
     },
   },
   plugins: [],

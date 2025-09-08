@@ -15,3 +15,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Almondita";
+  src: url("./assets/fonts/Almondita.ttf") format("truetype");
+}
