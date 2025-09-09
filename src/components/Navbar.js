@@ -9,10 +9,10 @@ const menuItems = [
   { nameTR: "Projelerim", nameEN: "Projects", id: "projects" },
   { nameTR: "Referanslarım", nameEN: "References", id: "references" },
   { nameTR: "İletişim", nameEN: "Contact", id: "contact" },
-  
+
 ];
 
-const Navbar = ({ lang = "tr", setLang = () => {} }) => {
+const Navbar = ({ lang = "tr", setLang = () => { } }) => {
   const [isOpen, setIsOpen] = useState(false); // mobile drawer
   const [isLangOpen, setIsLangOpen] = useState(false); // lang dropdown (desktop)
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,9 +64,8 @@ const Navbar = ({ lang = "tr", setLang = () => {} }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-        isScrolled ? "bg-darkBlue/60 backdrop-blur-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${isScrolled ? "bg-darkBlue/60 backdrop-blur-md" : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center gap-4 h-16">
@@ -82,7 +81,7 @@ const Navbar = ({ lang = "tr", setLang = () => {} }) => {
           </div>
 
           {/* Centered menu (desktop) */}
-          <div className="hidden md:flex flex-1 justify-center">
+          <div className="hidden lg:flex flex-1 justify-center">
             <ul className="flex items-center gap-8 text-white">
               {menuItems.map((item) => {
                 const label = lang === "tr" ? item.nameTR : item.nameEN;
@@ -92,9 +91,8 @@ const Navbar = ({ lang = "tr", setLang = () => {} }) => {
                     <a
                       href={`#${item.id}`}
                       onClick={handleNavLinkClick}
-                      className={`transition px-2 py-1 ${
-                        isActive ? "text-blue-400" : "hover:text-blue-400"
-                      }`}
+                      className={`transition px-2 py-1 ${isActive ? "text-blue-400" : "hover:text-blue-400"
+                        }`}
                     >
                       {label}
                     </a>
@@ -104,10 +102,10 @@ const Navbar = ({ lang = "tr", setLang = () => {} }) => {
             </ul>
           </div>
 
-          {/* Right actions: language dropdown (desktop) + mobile menu button */}
+          {/* Right actions: language selector (desktop + mobile) + mobile menu button */}
           <div className="ml-auto flex items-center gap-3">
             {/* Desktop language selector */}
-            <div className="hidden md:block relative" ref={langRef}>
+            <div className="hidden lg:block relative" ref={langRef}>
               <button
                 onClick={() => setIsLangOpen((s) => !s)}
                 className="px-3 py-2 bg-gray-800 rounded-md text-white flex items-center gap-2"
@@ -141,8 +139,18 @@ const Navbar = ({ lang = "tr", setLang = () => {} }) => {
               )}
             </div>
 
+            {/* Mobile language toggle */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => setLang(lang === "tr" ? "en" : "tr")}
+                className="px-3 py-2 bg-gray-800 rounded-md text-white"
+              >
+                {lang === "tr" ? "TR" : "EN"}
+              </button>
+            </div>
+
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 aria-label={isOpen ? "Kapat" : "Menü"}
                 onClick={() => setIsOpen((s) => !s)}
@@ -152,14 +160,14 @@ const Navbar = ({ lang = "tr", setLang = () => {} }) => {
               </button>
             </div>
           </div>
+
         </div>
       </div>
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden absolute left-0 right-0 top-full bg-darkBlue/95 border-t border-darkBlue/40 transition-transform ${
-          isOpen ? "translate-y-0" : "-translate-y-1"
-        }`}
+        className={`lg:hidden absolute left-0 right-0 top-full bg-darkBlue/95 border-t border-darkBlue/40 transition-all duration-300 overflow-hidden ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="px-6 py-4">
           <ul className="flex flex-col gap-3">
@@ -171,9 +179,8 @@ const Navbar = ({ lang = "tr", setLang = () => {} }) => {
                   <a
                     href={`#${item.id}`}
                     onClick={handleNavLinkClick}
-                    className={`block px-3 py-2 rounded-md ${
-                      isActive ? "text-blue-400" : "hover:text-blue-400"
-                    }`}
+                    className={`block px-3 py-2 rounded-md ${isActive ? "text-blue-400" : "hover:text-blue-400"
+                      }`}
                   >
                     {label}
                   </a>
@@ -190,9 +197,8 @@ const Navbar = ({ lang = "tr", setLang = () => {} }) => {
                   setLang("tr");
                   setIsOpen(false);
                 }}
-                className={`flex-1 px-3 py-2 rounded-md ${
-                  lang === "tr" ? "bg-purple-600" : "bg-gray-800"
-                }`}
+                className={`flex-1 px-3 py-2 rounded-md ${lang === "tr" ? "bg-purple-600" : "bg-gray-800"
+                  }`}
               >
                 🇹🇷 Türkçe
               </button>
@@ -201,9 +207,8 @@ const Navbar = ({ lang = "tr", setLang = () => {} }) => {
                   setLang("en");
                   setIsOpen(false);
                 }}
-                className={`flex-1 px-3 py-2 rounded-md ${
-                  lang === "en" ? "bg-purple-600" : "bg-gray-800"
-                }`}
+                className={`flex-1 px-3 py-2 rounded-md ${lang === "en" ? "bg-purple-600" : "bg-gray-800"
+                  }`}
               >
                 🇬🇧 English
               </button>

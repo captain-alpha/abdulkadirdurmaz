@@ -1,33 +1,56 @@
-import profileImg from "../images/profileImage.jpg";
-
-const About = ({ lang }) => {
+const blackHole = "/videos/blackhole.gif"
+const Footer = ({ lang }) => {
     return (
-        <section id="about" className="py-20 bg-darkBlue/60  text-white font-consolas">
-            <div className="container mx-auto flex flex-col items-center gap-9 px-6 text-center">
-
-                {/* Profil Görseli */}
-                <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full p-[3px] bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500">
-                    <img
-                        src={profileImg}
-                        alt="Profile"
-                        className="rounded-full object-cover w-full h-full"
-                    />
-                </div>
-
-                {/* Yazılar */}
-                <div className="max-w-2xl text-left">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-                        {lang === "tr" ? "Hakkımda" : "About Me"}
-                    </h2>
-                    <p className="text-lg leading-relaxed text-gray-300">
-                        {lang === "tr"
-                            ? "Herkese merhaba. Ben Abdulkadir. Genç bir yazılım mühendisi olarak, masaüstü uygulama geliştirme ve web teknolojileri konusunda tutkulu ve deneyimli biriyim. Çevik yazılım geliştirme metodolojileri konusunda deneyimli ve makine öğrenimi alanındaki uzmanlığımı ilerletme konusunda hevesliyim. Teknoloji sektöründe yenilikçi projelere katkıda bulunmaya büyük ilgi duyan, iş birlikçi bir takım oyuncusuyum."
-                            : "Hey there everyone. I'm Abdulkadir. As a junior software engineer, I am passionate about and experienced in desktop application development and web technologies. Experienced in Agile software development methodologies and enthusiastic about advancing expertise in machine learning. A collaborative team player with a strong interest in contributing to innovative projects in the tech industry."}
+        <section
+            className="py-20 px-6 bg-gradient-to-t from-black to-transparent text-gray-200"
+            id="contact"
+        >
+            <div className="max-w-5xl mx-auto flex flex-col items-center text-center gap-12">
+                {/* Başlık */}
+                <div>
+                    <h2 className="text-3xl font-bold mb-2">İletişim</h2>
+                    <p className="text-gray-400">
+                        Benimle iletişime geçmek için formu doldurabilir veya sosyal hesaplarımı
+                        kullanabilirsin.
                     </p>
                 </div>
 
+                {/* İletişim Formu */}
+                <form className="w-full max-w-lg flex flex-col gap-4 text-left">
+                    <div>
+                        <label className="block text-sm mb-1">Ad Soyad</label>
+                        <input
+                            type="text"
+                            placeholder="Adınızı giriniz"
+                            className="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm mb-1">E-posta</label>
+                        <input
+                            type="email"
+                            placeholder="E-posta adresiniz"
+                            className="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm mb-1">Mesaj</label>
+                        <textarea
+                            rows="4"
+                            placeholder="Mesajınızı yazın"
+                            className="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40"
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        className="w-full py-3 rounded-lg bg-white/20 hover:bg-white/30 transition font-semibold"
+                    >
+                        Gönder
+                    </button>
+                </form>
+
                 {/* Sosyal Medya Bağlantıları */}
-                <div class="bg-darkBlue/60 w-full h-auto py-8 flex items-center justify-center gap-4 flex-wrap">
+                <div class="bg-darkBlue/10 w-full h-auto py-8 flex items-center justify-center gap-4 flex-wrap">
                     <a href="https://www.instagram.com/abdulkadir.cs/"
                         className="w-10 h-10 flex items-center justify-center group rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300"
                         target="_blank"
@@ -75,25 +98,27 @@ const About = ({ lang }) => {
                  .77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.625-5.479 5.922
                  .43.372.823 1.103.823 2.222 0 1.606-.015 2.898-.015 3.293
                  0 .319.217.694.825.576C20.565 22.08 24 17.587 24 12.297
-                 c0-6.627-5.373-12-12-12" fill="black"/>
+                 c0-6.627-5.373-12-12-12" fill="black" />
                         </svg>
                     </a>
+                </div>
 
+                <div className="relative w-full">
+                    {/* Copyright */}
+                    <div className="pt-10 text-gray-500 text-sm border-t border-white/10 w-full">
+                        © {new Date().getFullYear()} Abdulkadir DURMAZ - Tüm hakları saklıdır.
+                    </div>
 
-                    <a href={`mailto:jobs.abdulkadirdurmaz@gmail.com`}
-                        className="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
-                        <svg class="rounded-md transition-all duration-300 group-hover:scale-110" width="28" height="28" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.0065 56.1236H21.4893V35.5227L9.37109 26.4341V52.4881C9.37109 54.4997 11.001 56.1236 13.0065 56.1236Z" fill="#4285F4" />
-                            <path d="M50.5732 56.1236H59.056C61.0676 56.1236 62.6914 54.4937 62.6914 52.4881V26.4341L50.5732 35.5227" fill="#34A853" />
-                            <path d="M50.5732 19.7693V35.5229L62.6914 26.4343V21.587C62.6914 17.0912 57.5594 14.5282 53.9663 17.2245" fill="#FBBC04" />
-                            <path d="M21.4893 35.5227V19.769L36.0311 30.6754L50.5729 19.769V35.5227L36.0311 46.429" fill="#EA4335" />
-                            <path d="M9.37109 21.587V26.4343L21.4893 35.5229V19.7693L18.0962 17.2245C14.4971 14.5282 9.37109 17.0912 9.37109 21.587Z" fill="#C5221F" />
-                        </svg>
-                    </a>
+                    {/* Gif */}
+                    <img
+                        src={blackHole}
+                        alt="footer gif"
+                        className="mx-auto mt-4 w-1040 h-350 opacity-50 pointer-events-none"
+                    />
                 </div>
             </div>
         </section>
     );
 };
 
-export default About;
+export default Footer;

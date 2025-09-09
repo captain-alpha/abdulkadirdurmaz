@@ -1,51 +1,9 @@
 "use client";
 import { BookOpen, Code, Laptop } from "lucide-react";
-import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
 const Skills = ({ lang }) => {
-    const [sliderRef] = useKeenSlider({
-        loop: true,
-        renderMode: "performance",
-        drag: false,
-        slides: { perView: 5, spacing: 15 },
-        breakpoints: {
-            "(max-width: 1024px)": { slides: { perView: 3, spacing: 10 } },
-            "(max-width: 768px)": { slides: { perView: 2, spacing: 10 } },
-        },
-        created: (slider) => {
-            let timeout;
-            let mouseOver = false;
-
-            function clearNextTimeout() {
-                clearTimeout(timeout);
-            }
-            function nextTimeout() {
-                clearTimeout(timeout);
-                if (mouseOver) return;
-                timeout = setTimeout(() => {
-                    slider.prev(); // ⬅️ sola kaydır
-                }, 2500); // daha smooth
-            }
-
-            slider.on("created", () => {
-                slider.container.addEventListener("mouseover", () => {
-                    mouseOver = true;
-                    clearNextTimeout();
-                });
-                slider.container.addEventListener("mouseout", () => {
-                    mouseOver = false;
-                    nextTimeout();
-                });
-                nextTimeout();
-            });
-            slider.on("dragStarted", clearNextTimeout);
-            slider.on("animationEnded", nextTimeout);
-            slider.on("updated", nextTimeout);
-        },
-
-    });
-
+    // Data
     const applications = [
         { name: "Visual Studio", logo: "/logos/vs.png" },
         { name: "VS Code", logo: "/logos/vscode.png" },
@@ -97,12 +55,13 @@ const Skills = ({ lang }) => {
                         <BookOpen className="w-6 h-6 text-yellow-400" />
                         {lang === "tr" ? "Dil Yetenekleri" : "Language Skills"}
                     </h3>
-                    <div className="bg-gray-900/60 p-6 rounded-xl shadow max-w-lg mx-auto">
+                    <div className="bg-gray-900/60 p-6 rounded-xl shadow max-w-4xl mx-auto">
                         <p className="text-gray-300">
                             {lang === "tr" ? "Anadil: Türkçe" : "Mother tongue: Turkish"}
                         </p>
                         <p className="text-gray-300 mt-2 text-sm">
-                            English → Listening: B1 | Reading: B1 | Writing: B1 | Spoken Production: A2 | Spoken Interaction: A2
+                            English → Listening: B1 | Reading: B1 | Writing: B1 | Spoken
+                            Production: A2 | Spoken Interaction: A2
                         </p>
                     </div>
                 </div>
@@ -115,7 +74,7 @@ const Skills = ({ lang }) => {
                     </h3>
 
                     {/* Programlama Dilleri */}
-                    <div className="bg-gray-900/60 p-6 rounded-xl shadow mb-6">
+                    <div className="bg-gray-900/60 p-6 rounded-xl shadow mb-6 max-w-4xl mx-auto">
                         <h4 className="text-lg font-bold text-blue-400 mb-4">
                             {lang === "tr"
                                 ? "Programlama Dilleri"
@@ -135,9 +94,11 @@ const Skills = ({ lang }) => {
                     </div>
 
                     {/* Frameworks */}
-                    <div className="bg-gray-900/60 p-6 rounded-xl shadow mb-6">
+                    <div className="bg-gray-900/60 p-6 rounded-xl shadow mb-6 max-w-4xl mx-auto">
                         <h4 className="text-lg font-bold text-blue-400 mb-4">
-                            {lang === "tr" ? "Teknolojiler & Frameworkler" : "Technologies & Frameworks"}
+                            {lang === "tr"
+                                ? "Teknolojiler & Frameworkler"
+                                : "Technologies & Frameworks"}
                         </h4>
                         <div className="flex flex-wrap justify-center gap-4">
                             {frameworks.map((f, i) => (
@@ -159,16 +120,18 @@ const Skills = ({ lang }) => {
                         <Laptop className="w-6 h-6 text-green-400" />
                         {lang === "tr" ? "Uygulamalar & IDE'ler" : "Applications & IDEs"}
                     </h3>
-                    <div ref={sliderRef} className="keen-slider">
-                        {applications.map((app, idx) => (
-                            <div
-                                key={idx}
-                                className="keen-slider__slide bg-gray-900/60 p-6 rounded-xl shadow flex flex-col items-center justify-center text-center font-semibold text-gray-200 hover:text-green-400 transition"
-                            >
-                                <img src={app.logo} alt={app.name} className="h-12 mb-2" />
-                                {app.name}
-                            </div>
-                        ))}
+                    <div className="overflow-hidden relative w-full max-w-4xl mx-auto">
+                        <div className="flex gap-6 animate-marquee">
+                            {applications.concat(applications).map((app, idx) => (
+                                <div
+                                    key={idx}
+                                    className="min-w-[120px] bg-gray-900/60 p-4 rounded-xl shadow flex flex-col items-center justify-center text-center font-semibold text-gray-200 hover:text-green-400 transition"
+                                >
+                                    <img src={app.logo} alt={app.name} className="h-12 mb-2" />
+                                    {app.name}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,7 @@ import Experiences from "./components/Experiences";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import References from "./components/References";
+import Footer from "./components/Footer";
 
 import GalaxyScene from "./components/GalaxyScene";
 
@@ -28,9 +29,7 @@ function App() {
         <Skills lang={lang} />
         <Projects lang={lang} />
         <References lang={lang} />
-        <section className="min-h-screen flex items-center justify-center">
-          <h2 className="text-4xl">Hakkımda</h2>
-        </section>
+        <Footer lang={lang} />
       </div>
 
     </div>
