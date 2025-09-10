@@ -1,4 +1,5 @@
 import { Briefcase, GraduationCap } from "lucide-react";
+import { FaFilePdf } from "react-icons/fa";
 
 const Experiences = ({ lang }) => {
     return (
@@ -28,7 +29,7 @@ const Experiences = ({ lang }) => {
                                     rel="noopener noreferrer"
                                     className="text-xl font-bold text-blue-400 hover:underline"
                                 >
-                                    Intern Engineer @ ASELSAN
+                                    {lang === "tr" ? "ASELSAN'da Stajyer Mühendis" : "Intern Engineer @ ASELSAN"}
                                 </a>
                                 <p className="mt-2 text-gray-300">
                                     {lang === "tr"
@@ -45,7 +46,7 @@ const Experiences = ({ lang }) => {
                                     rel="noopener noreferrer"
                                     className="text-xl font-bold text-blue-400 hover:underline"
                                 >
-                                    Intern Programmer @ Olimpos
+                                    {lang === "tr" ? "Olimpos'da Stajyer Programcı" : "Intern Programmer @ Olimpos"}
                                 </a>
                                 <p className="mt-2 text-gray-300">
                                     {lang === "tr"
@@ -62,7 +63,7 @@ const Experiences = ({ lang }) => {
                                     rel="noopener noreferrer"
                                     className="text-xl font-bold text-blue-400 hover:underline"
                                 >
-                                    Freelance Developer @ Bionluk
+                                    {lang === "tr" ? "bionluk.com'da Serbest Yazılımcı" : "Freelance Developer on bionluk.com"}
                                 </a>
                                 <p className="mt-2 text-gray-300">
                                     {lang === "tr"
@@ -82,7 +83,18 @@ const Experiences = ({ lang }) => {
                         <div className="space-y-6">
 
                             {/* ADÜ */}
-                            <div className="bg-gray-900/60 p-6 rounded-xl shadow hover:shadow-lg transition min-h-[200px]">
+                            <div className="bg-gray-900/60 p-6 rounded-xl shadow hover:shadow-lg transition min-h-[200px] relative">
+                                {/* PDF Buton */}
+                                <a
+                                    href="/docs/adu-yuksekogretim-mezun-belgesi-sorgulama.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="absolute top-4 right-4 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded-md shadow transition"
+                                >
+                                    <FaFilePdf size={16} />
+                                    PDF
+                                </a>
+
                                 <a
                                     href="https://akademik.adu.edu.tr/bolum/muhendislik/bilgisayar/"
                                     target="_blank"
@@ -118,7 +130,17 @@ const Experiences = ({ lang }) => {
                             </div>
 
                             {/* Ankara Üniversitesi */}
-                            <div className="bg-gray-900/60 p-6 rounded-xl shadow hover:shadow-lg transition min-h-[200px]">
+                            <div className="bg-gray-900/60 p-6 rounded-xl shadow hover:shadow-lg transition min-h-[200px] relative">
+                                {/* PDF Buton */}
+                                <a
+                                    href="/docs/au-yuksekogretim-mezun-belgesi-sorgulama.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="absolute top-4 right-4 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded-md shadow transition"
+                                >
+                                    <FaFilePdf size={16} />
+                                    PDF
+                                </a>
 
                                 <a
                                     href="https://nallihanmyo.ankara.edu.tr/"

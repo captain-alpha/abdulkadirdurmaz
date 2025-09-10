@@ -19,6 +19,7 @@ const Skills = ({ lang }) => {
     ];
 
     const programming = [
+        { name: "C", logo: "/logos/c.png" },
         { name: "C#", logo: "/logos/csharp.png" },
         { name: "Java", logo: "/logos/java.png" },
         { name: "Python", logo: "/logos/python.png" },

@@ -1,4 +1,7 @@
+import ContactForm from "./ContactForm";
+
 const blackHole = "/videos/blackhole.gif"
+
 const Footer = ({ lang }) => {
     return (
         <section
@@ -8,36 +11,47 @@ const Footer = ({ lang }) => {
             <div className="max-w-5xl mx-auto flex flex-col items-center text-center gap-12">
                 {/* Başlık */}
                 <div>
-                    <h2 className="text-3xl font-bold mb-2">İletişim</h2>
-                    <p className="text-gray-400">
-                        Benimle iletişime geçmek için formu doldurabilir veya sosyal hesaplarımı
-                        kullanabilirsin.
+                    <h2 className="text-3xl font-bold mb-2 font-consolas">
+                        {lang === "tr" ? "İletişim" : "Contact"}
+                    </h2>
+                    <p className="text-gray-400 font-consolas">
+                        {lang === "tr" ? "Benimle iletişime geçmek için formu doldurabilir veya sosyal hesaplarımı kullanabilirsiniz." : "You can fill out the form or use my social media accounts to contact me."}
                     </p>
                 </div>
 
                 {/* İletişim Formu */}
+                <ContactForm lang={lang} />
+                {/*
                 <form className="w-full max-w-lg flex flex-col gap-4 text-left">
                     <div>
-                        <label className="block text-sm mb-1">Ad Soyad</label>
+                        <label className="block text-sm mb-1">
+                            {lang === "tr" ? "Ad Soyad" : "Full Name"}
+
+                        </label>
                         <input
                             type="text"
-                            placeholder="Adınızı giriniz"
+                            placeholder={lang === "tr" ? "Adınızı giriniz" : "Enter your name"}
                             className="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40"
                         />
                     </div>
                     <div>
-                        <label className="block text-sm mb-1">E-posta</label>
+                        <label className="block text-sm mb-1">
+                            {lang === "tr" ? "E-posta" : "E-mail"}
+
+                        </label>
                         <input
                             type="email"
-                            placeholder="E-posta adresiniz"
+                            placeholder={lang === "tr" ? "E-posta adresiniz" : "Your mail address"}
                             className="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40"
                         />
                     </div>
                     <div>
-                        <label className="block text-sm mb-1">Mesaj</label>
+                        <label className="block text-sm mb-1">
+                            {lang === "tr" ? "Mesaj" : "Message"}
+                        </label>
                         <textarea
                             rows="4"
-                            placeholder="Mesajınızı yazın"
+                            placeholder={lang === "tr" ? "Mesajınızı yazın" : "Write your message"}
                             className="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/40"
                         ></textarea>
                     </div>
@@ -45,9 +59,10 @@ const Footer = ({ lang }) => {
                         type="submit"
                         className="w-full py-3 rounded-lg bg-white/20 hover:bg-white/30 transition font-semibold"
                     >
-                        Gönder
+                        {lang === "tr" ? "Gönder" : "Send"}
                     </button>
                 </form>
+                */}
 
                 {/* Sosyal Medya Bağlantıları */}
                 <div class="bg-darkBlue/10 w-full h-auto py-8 flex items-center justify-center gap-4 flex-wrap">
@@ -99,6 +114,24 @@ const Footer = ({ lang }) => {
                  .43.372.823 1.103.823 2.222 0 1.606-.015 2.898-.015 3.293
                  0 .319.217.694.825.576C20.565 22.08 24 17.587 24 12.297
                  c0-6.627-5.373-12-12-12" fill="black" />
+                        </svg>
+                    </a>
+
+                    <a href="https://www.hackerrank.com/profile/abdulkadirDurmaz"
+                        className="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300"
+                        target="_blank"
+                        rel="noreferrer">
+                        <svg
+                            class="rounded-md transition-all duration-300 group-hover:scale-110"
+                            role="img"
+                            width="28"
+                            height="28"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="#2EC866" // Logonun yeşil rengi
+                        >
+                            <title>HackerRank</title>
+                            <path d="M7.763 3.61c.421 0 .762.316.762.705v13.56c0 .389-.34.705-.762.705H.763c-.42 0-.763-.316-.763-.705V4.316c0-.389.341-.705.763-.705h7zM23.237 3.61c-.421 0-.763.316-.763.705v13.56c0 .389.342.705.763.705h-7c.42 0 .763-.316.763-.705V4.316c0-.389-.342-.705-.763-.705h7zM15.485 20.32c-.42 0-.762.316-.762.704v.95c0 .39.342.706.762.706h-7c-.421 0-.763-.316-.763-.705v-.951c0-.388.342-.705.763-.705h7zM11.996 11.235c.422 0 .764.316.764.706v.95c0 .389-.342.705-.764.705h-7c-.42 0-.763-.316-.763-.705v-.95c0-.39.341-.706.763-.706h7z" />
                         </svg>
                     </a>
                 </div>
