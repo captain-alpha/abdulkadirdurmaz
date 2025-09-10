@@ -9,6 +9,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import References from "./components/References";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 import GalaxyScene from "./components/GalaxyScene";
 
@@ -30,6 +31,7 @@ function App() {
         <Projects lang={lang} />
         <References lang={lang} />
         <Footer lang={lang} />
+        <ScrollToTop/>
       </div>
 
     </div>

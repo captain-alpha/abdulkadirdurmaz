@@ -76,7 +76,7 @@ const Navbar = ({ lang = "tr", setLang = () => { } }) => {
               className="text-7xl font-bold text-white font-almondita"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              A Durmaz.
+              A. Durmaz
             </a>
           </div>
 

@@ -8,25 +8,71 @@ const projects = [
         title: "https://movion.org",
         type: "live",
         url: "https://movion.org",
-        description: "AI destekli film öneri platformu. Kullanıcılara kişiselleştirilmiş film önerileri sunar.",
+        description_tr: "AI destekli film öneri platformu. Kullanıcılara kişiselleştirilmiş film önerileri sunar.",
+        description_en: "AI-powered movie recommendation platform. Provides users with personalized movie recommendations.",
     },
     {
-        title: "Fruits-360 Classifier",
+        title: "Deep Learning Project-I Part-I ",
         type: "github",
-        url: "https://github.com/abdulkadir-durmaz/fruits360-classifier",
-        description: "Fruits-360 dataset kullanarak PCA, Random Forest, XGBoost ve ANN ile meyve sınıflandırma projesi.",
+        url: "https://github.com/captain-alpha/Deep_Learning_Project1_part1",
+        description_tr: "Fruits-360 dataset kullanarak PCA, Random Forest, XGBoost ve ANN ile meyve sınıflandırma projesi.",
+        description_en: "Fruit classification project using Fruits-360 dataset with PCA, Random Forest, XGBoost and ANN.",
+    },
+    {
+        title: "Deep Learning Project-I Part-II ",
+        type: "github",
+        url: "https://github.com/captain-alpha/Deep_Learning_Project1_part2/",
+        description_tr: "Transfer learning ve fine-tuning yoluyla Fruits-360 veri setini kullanarak meyve sınıflandırmasının performansını iyileştirmek.",
+        description_en: "Improving the performance of fruit classification using Fruits-360 dataset via transfer learning and fine-tuning.",
+    },
+    {
+        title: "Deep Learning Project-II ",
+        type: "github",
+        url: "https://github.com/captain-alpha/Deep_Learning_Project1_part2/",
+        description_tr: "Bir ağ trafiği paketleri veri seti kullanarak DoS saldırılarını tespiti.",
+        description_en: "Detecting DoS attacks using a network traffic packets dataset.",
+    },
+    {
+        title: "Naturel Language Processing Project-I Part-I",
+        type: "github",
+        url: "https://github.com/captain-alpha/Naturel_Language_Processing_Project1_part1",
+        description_tr: "Türkçe tweetler üzerinde machine learning algoritmaları kullanarak bir nefret söylemi tespit sistemi.",
+        description_en: "A hate speech detection system using machine learning algorithms on Turkish tweets.",
+    },
+    {
+        title: "Naturel Language Processing Project-I Part-II",
+        type: "github",
+        url: "https://github.com/captain-alpha/Naturel_Language_Processing_Project1_part2",
+        description_tr: "Bu projede, Zemberek modeli kullanarak yazım hatalarını düzelttim, Turkish Word2Vec modeli ile fine-tune uyguladım, machine learning ve ANN modelleri eğiterek sonuçları kıyasladım.",
+        description_en: "In this project, I corrected spelling errors using the Zemberek model, fine-tuned the Turkish Word2Vec model, and compared the results by training machine learning and ANN models.",
+    },
+    {
+        title: "Naturel Language Processing Project-II",
+        type: "github",
+        url: "https://github.com/captain-alpha/Naturel_Language_Processing_Project2",
+        description_tr: "Amacım TTC4900 Haber veri kümesi üzerinde bir metin sınıflandırma uygulaması geliştirmekti.",
+        description_en: "My goal was to develop a text classification application on the TTC4900 News dataset.",
+    },
+    {
+        title: "Metaheuristic",
+        type: "github",
+        url: "https://github.com/captain-alpha/Metaheuristic_Project",
+        description_tr: "Bu projede, hyper parameter optimizasyonu için metaheuristic algoritmalar tasarlama ve uygulama konusunda pratik deneyim kazandırmayı amaçladım.",
+        description_en: "In this project, I aimed to gain practical experience in designing and implementing metaheuristic algorithms for hyperparameter optimization.",
+    },
+    {
+        title: "Big Data",
+        type: "github",
+        url: "https://github.com/captain-alpha/Big_Data",
+        description_tr: "Bu projede, anime dizilerine ait verileri inceleyerek ve işleyerek aralarında en çok tercih edilenleri grafiklere dönüştürdüğümüz bir ekip projesi yürüttük.",
+        description_en: "In this project, we carried out a team project in which we examined and processed the data of anime series and converted the most preferred ones into graphics.",
     },
     {
         title: "Parking Simulation",
         type: "github",
         url: "https://github.com/captain-alpha/ParkingSimulation",
-        description: "SUMO Simulation kullanarak otopark doluluk oranı simüle eden ekip projemiz.",
-    },
-    {
-        title: "Hate Speech Detection",
-        type: "github",
-        url: "https://github.com/abdulkadir-durmaz/hate-speech-turkish",
-        description: "Türkçe sosyal medya verilerinde nefret söylemi tespiti için Transformer modelleriyle NLP projesi.",
+        description_tr: "SUMO Simulation kullanarak otopark doluluk oranı simüle eden ekip projemiz.",
+        description_en: "Our team project simulating parking lot occupancy rate using SUMO Simulation.",
     },
 ];
 
@@ -109,7 +155,9 @@ const Projects = ({ lang }) => {
                             ) : (
                                 // GitHub Projesi (açıklama + link)
                                 <div className="bg-gray-900 rounded-2xl shadow-xl p-8 flex flex-col justify-center h-full">
-                                    <p className="text-gray-300 mb-6 text-lg">{project.description}</p>
+                                    <p className="text-gray-300 mb-6 text-lg">
+                                        {lang === "tr" ? project.description_tr : project.description_en}
+                                    </p>
                                     <a
                                         href={project.url}
                                         target="_blank"
