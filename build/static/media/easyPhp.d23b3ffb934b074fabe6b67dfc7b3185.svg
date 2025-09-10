@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="196" >
+	<title>EasyPHP Logo</title>
+	<g>
+		<path d="m 2,2 168,0 0,108 -120,0 0,-48 72,0 0,-12 -72,0 0,72 60,0 0,48 -108,0 z" style="fill:#000" />
+		<rect x="122" y="122" width="72" height="72" style="fill:#800000" />
+	</g>
+</svg>
