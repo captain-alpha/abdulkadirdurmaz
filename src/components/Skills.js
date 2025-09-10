@@ -2,41 +2,73 @@
 import { BookOpen, Code, Laptop } from "lucide-react";
 import "keen-slider/keen-slider.min.css";
 
+// Üst kısımda importları yap
+import vs from "../images/logos/vs.png";
+import vscode from "../images/logos/vscode.png";
+import jupyter from "../images/logos/jupyter.png";
+import colab from "../images/logos/colab.png";
+import eclipse from "../images/logos/eclipse.png";
+import github from "../images/logos/github.png";
+import postman from "../images/logos/postman.png";
+import wireshark from "../images/logos/wireshark.png";
+import ssms from "../images/logos/ssms.png";
+import mongodb from "../images/logos/mongodb.png";
+import easyPhp from "../images/logos/easyPhp.svg";
+
+// Programlama dilleri
+import c from "../images/logos/c.png";
+import csharp from "../images/logos/csharp.png";
+import java from "../images/logos/java.png";
+import python from "../images/logos/python.png";
+import sql from "../images/logos/sql.png";
+import js from "../images/logos/js.png";
+import php from "../images/logos/php.png";
+import r from "../images/logos/r.png";
+
+// Frameworkler
+import dotnet from "../images/logos/dotnet.svg";
+import reactLogo from "../images/logos/react.png";
+import node from "../images/logos/node.png";
+import tf from "../images/logos/tf.png";
+import pytorch from "../images/logos/pytorch.png";
+import pandas from "../images/logos/pandas.png";
+import numpy from "../images/logos/numpy.png";
+
 const Skills = ({ lang }) => {
     // Data
     const applications = [
-        { name: "Visual Studio", logo: "/logos/vs.png" },
-        { name: "VS Code", logo: "/logos/vscode.png" },
-        { name: "Jupyter", logo: "/logos/jupyter.png" },
-        { name: "Colab", logo: "/logos/colab.png" },
-        { name: "Eclipse", logo: "/logos/eclipse.png" },
-        { name: "Github", logo: "/logos/github.png" },
-        { name: "Postman", logo: "/logos/postman.png" },
-        { name: "Wireshark", logo: "/logos/wireshark.png" },
-        { name: "SSMS", logo: "/logos/ssms.png" },
-        { name: "MongoDB", logo: "/logos/mongodb.png" },
-        { name: "easyPHP", logo: "/logos/easyPhp.svg" },
+        { name: "Visual Studio", logo: vs },
+        { name: "VS Code", logo: vscode },
+        { name: "Jupyter", logo: jupyter },
+        { name: "Colab", logo: colab },
+        { name: "Eclipse", logo: eclipse },
+        { name: "Github", logo: github },
+        { name: "Postman", logo: postman },
+        { name: "Wireshark", logo: wireshark },
+        { name: "SSMS", logo: ssms },
+        { name: "MongoDB", logo: mongodb },
+        { name: "easyPHP", logo: easyPhp },
     ];
 
     const programming = [
-        { name: "C", logo: "/logos/c.png" },
-        { name: "C#", logo: "/logos/csharp.png" },
-        { name: "Java", logo: "/logos/java.png" },
-        { name: "Python", logo: "/logos/python.png" },
-        { name: "SQL", logo: "/logos/sql.png" },
-        { name: "JavaScript", logo: "/logos/js.png" },
-        { name: "PHP", logo: "/logos/php.png" },
-        { name: "R", logo: "/logos/r.png" },
+        { name: "C", logo: c },
+        { name: "C#", logo: csharp },
+        { name: "Java", logo: java },
+        { name: "Python", logo: python },
+        { name: "SQL", logo: sql },
+        { name: "JavaScript", logo: js },
+        { name: "PHP", logo: php },
+        { name: "R", logo: r },
     ];
 
     const frameworks = [
-        { name: ".NET", logo: "/logos/dotnet.svg" },
-        { name: "React.js", logo: "/logos/react.png" },
-        { name: "Node.js", logo: "/logos/node.png" },
-        { name: "TensorFlow", logo: "/logos/tf.png" },
-        { name: "PyTorch", logo: "/logos/pytorch.png" },
-        { name: "Pandas", logo: "/logos/pandas.png" },
-        { name: "NumPy", logo: "/logos/numpy.png" },
+        { name: ".NET", logo: dotnet },
+        { name: "React.js", logo: reactLogo },
+        { name: "Node.js", logo: node },
+        { name: "TensorFlow", logo: tf },
+        { name: "PyTorch", logo: pytorch },
+        { name: "Pandas", logo: pandas },
+        { name: "NumPy", logo: numpy },
     ];
 
     return (

@@ -24,7 +24,5 @@ yarn-error.log*
 
 # Development files
 /inDevelopment
-/public/videos
-/src/images
 developmet-notes.txt
 .env

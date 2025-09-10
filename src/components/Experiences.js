@@ -1,5 +1,7 @@
 import { Briefcase, GraduationCap } from "lucide-react";
 import { FaFilePdf } from "react-icons/fa";
+import adu_mezun_pdf from "../docs/adu-yuksekogretim-mezun-belgesi-sorgulama.pdf"
+import au_mezun_pdf from "../docs/au-yuksekogretim-mezun-belgesi-sorgulama.pdf"
 
 const Experiences = ({ lang }) => {
     return (
@@ -83,30 +85,30 @@ const Experiences = ({ lang }) => {
                         <div className="space-y-6">
 
                             {/* ADÜ */}
-                            <div className="bg-gray-900/60 p-6 rounded-xl shadow hover:shadow-lg transition min-h-[200px] relative">
-                                {/* PDF Buton */}
-                                <a
-                                    href="/docs/adu-yuksekogretim-mezun-belgesi-sorgulama.pdf"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="absolute top-4 right-4 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded-md shadow transition"
-                                >
-                                    <FaFilePdf size={16} />
-                                    PDF
-                                </a>
-
-                                <a
-                                    href="https://akademik.adu.edu.tr/bolum/muhendislik/bilgisayar/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-xl font-bold text-green-400 hover:underline"
-                                >
-                                    <h4 className="text-xl font-bold text-green-400">
+                            <div className="bg-gray-900/60 p-6 rounded-xl shadow hover:shadow-lg transition min-h-[200px]">
+                                <div className="flex justify-between items-start">
+                                    <a
+                                        href="https://akademik.adu.edu.tr/bolum/muhendislik/bilgisayar/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-xl font-bold text-green-400 hover:underline"
+                                    >
                                         {lang === "tr"
                                             ? "Bilgisayar Mühendisliği Lisans"
                                             : "Computer Engineering Bachelor's"}
-                                    </h4>
-                                </a>
+                                    </a>
+
+                                    {/* PDF Buton */}
+                                    <a
+                                        href={adu_mezun_pdf}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm sm:text-sm px-1 sm:px-3 py-1 rounded-md shadow transition"
+                                    >
+                                        <FaFilePdf size={16} />
+                                        <span className="hidden sm:inline">PDF</span>
+                                    </a>
+                                </div>
 
                                 <p className="mt-1 text-gray-300">Adnan Menderes University</p>
                                 <p className="text-sm text-gray-400">
@@ -130,30 +132,31 @@ const Experiences = ({ lang }) => {
                             </div>
 
                             {/* Ankara Üniversitesi */}
-                            <div className="bg-gray-900/60 p-6 rounded-xl shadow hover:shadow-lg transition min-h-[200px] relative">
-                                {/* PDF Buton */}
-                                <a
-                                    href="/docs/au-yuksekogretim-mezun-belgesi-sorgulama.pdf"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="absolute top-4 right-4 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded-md shadow transition"
-                                >
-                                    <FaFilePdf size={16} />
-                                    PDF
-                                </a>
-
-                                <a
-                                    href="https://nallihanmyo.ankara.edu.tr/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-xl font-bold text-green-400 hover:underline"
-                                >
-                                    <h4 className="text-xl font-bold text-green-400">
+                            <div className="bg-gray-900/60 p-6 rounded-xl shadow hover:shadow-lg transition min-h-[200px]">
+                                <div className="flex justify-between items-start">
+                                    <a
+                                        href="https://nallihanmyo.ankara.edu.tr/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-xl font-bold text-green-400 hover:underline"
+                                    >
                                         {lang === "tr"
                                             ? "Bilgisayar Programcılığı Ön Lisans"
                                             : "Computer Programming Associate’s"}
-                                    </h4>
-                                </a>
+                                    </a>
+
+                                    {/* PDF Buton */}
+                                    <a
+                                        href={au_mezun_pdf}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm sm:text-sm px-1 sm:px-3 py-1 rounded-md shadow transition"
+                                    >
+                                        <FaFilePdf size={16} />
+                                        <span className="hidden sm:inline">PDF</span>
+                                    </a>
+                                </div>
+
                                 <p className="mt-1 text-gray-300">Ankara University</p>
                                 <p className="text-sm text-gray-400">
                                     18/09/2021 - 17/07/2025 <br />
