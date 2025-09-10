@@ -1,6 +1,5 @@
 import ContactForm from "./ContactForm";
 
-//const blackHole = "/videos/blackhole.gif"
 const blackHole = "../videos/blackhole.gif"
 
 const Footer = ({ lang }) => {
