@@ -13,12 +13,23 @@ const ContactForm = ({ lang }) => {
         event.preventDefault();
         setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
         const form = event.target;
-        
+
         // Form verilerini toplama
         const formData = new FormData(form);
 
-        // Formspree endpoint'i. 'YOUR_FORMSPREE_ENDPOINT' kısmını kendi Formspree URL'nizle değiştirin.
-        const response = await fetch('https://formspree.io/f/xjkeleqb', {
+        // Formspree endpoint'ini .env dosyasından alıyoruz
+        const formsprEeEndpoint = process.env.REACT_APP_FORMSPREE_ENDPOINT;
+
+        if (!formsprEeEndpoint) {
+            setStatus({
+                submitted: false,
+                submitting: false,
+                info: { error: true, msg: 'Formspree endpoint is missing. Please check your .env file.' },
+            });
+            return;
+        }
+
+        const response = await fetch(`https://formspree.io/${formsprEeEndpoint}`, {
             method: 'POST',
             body: formData,
             headers: {
@@ -30,7 +41,7 @@ const ContactForm = ({ lang }) => {
             setStatus({
                 submitted: true,
                 submitting: false,
-                info: { error: false, msg: 'Message sent successfully!' },
+                info: { error: false, msg: 'Mesaj başarıyla gönderildi!' },
             });
             form.reset(); // Formu sıfırlama
         } else {
@@ -38,7 +49,7 @@ const ContactForm = ({ lang }) => {
             setStatus({
                 submitted: false,
                 submitting: false,
-                info: { error: true, msg: data.error || 'There was an error sending your message. Please try again later.' },
+                info: { error: true, msg: data.error || 'Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.' },
             });
         }
     };
