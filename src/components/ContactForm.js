@@ -41,7 +41,7 @@ const ContactForm = ({ lang }) => {
             setStatus({
                 submitted: true,
                 submitting: false,
-                info: { error: false, msg: 'Mesaj başarıyla gönderildi!' },
+                info: { error: false, msg: 'Message sent successfully!' },
             });
             form.reset(); // Formu sıfırlama
         } else {
@@ -49,7 +49,7 @@ const ContactForm = ({ lang }) => {
             setStatus({
                 submitted: false,
                 submitting: false,
-                info: { error: true, msg: data.error || 'Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.' },
+                info: { error: true, msg: data.error || 'There was an error sending your message. Please try again later.' },
             });
         }
     };
